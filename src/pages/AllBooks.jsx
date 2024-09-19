@@ -14,7 +14,6 @@ const AllBooks = () => {
                 },
             })
             .then((res) => {
-                console.log(res.data.books);
                 setBooks(res.data.books);
             })
             .catch((err) => console.log(err));
@@ -22,16 +21,13 @@ const AllBooks = () => {
     
     return (
         <div>
-            <h1>Here are our books!</h1>
-            <div className='flex flex-wrap mx-10 px-10 gap-3'>
+            <h1 className='text-3xl text-black font-semibold mb-3'>Here are our books!</h1>
+            <div className='flex flex-wrap items-start justify-center gap-6 p-5 overflow-x-auto'>
                 {books &&
                     books.map((book) => (
                         <Card
-                            title={book.Title}
-                            author={book.Author}
-                            year={book.Year}
-                            price={book.Price ?? 0}
-                            genres={book.Genres}
+                            book={book}
+                            key={book.ID}
                         />
                     ))}
             </div>

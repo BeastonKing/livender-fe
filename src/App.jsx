@@ -12,49 +12,50 @@ import AllBooks from './pages/AllBooks';
 import AddBook from './pages/AddBook';
 import Genres from './pages/Genres';
 import BookDetail from './pages/BookDetail';
+import EditBook from './pages/EditBook';
+import Profile from './pages/Profile';
+import GenreBooks from './pages/GenreBooks';
+import Welcome from './pages/Welcome';
+import Order from './pages/Order';
+import NotFound from './pages/NotFound';
 
 function App() {
     return (
         <>
             <Routes>
-                {/* <Route
-                    path='/'
-                    element={
-                        <div>
-                            <h1>Hello world</h1>
-                        </div>
-                    }
-                /> */}
                 <Route path='/register' element={<Register />} />
                 <Route path='/login' element={<Login />} />
 
                 <Route path='/' element={<Home />}>
-                    <Route index element={<h1>Explore Unsigned</h1>} />
+                    <Route index element={<Welcome />} />
                     <Route
-                        path='explore'
+                        path='genres'
                         element={
                             <ProtectedRoute>
-                                <Genres />
+                                <GenreBooks />
                             </ProtectedRoute>
                         }
                     />
 
                     <Route
-                        path='books'
+                        path='profile'
                         element={
                             <ProtectedRoute>
-                                <Books />
+                                <Profile />
                             </ProtectedRoute>
                         }
-                    >
-                        <Route
-                            index
-                            element={
-                                <ProtectedRoute>
-                                    <AllBooks />
-                                </ProtectedRoute>
-                            }
-                        />
+                    />
+                    <Route
+                        path='orders'
+                        element={
+                            <ProtectedRoute>
+                                <Order />
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route path='books' element={<Books />}>
+                        <Route index element={<AllBooks />} />
                         <Route
                             path='add'
                             element={
@@ -64,10 +65,10 @@ function App() {
                             }
                         />
                         <Route
-                            path='edit'
+                            path='edit/:id'
                             element={
                                 <ProtectedRoute>
-                                    <h1>Edit Book</h1>
+                                    <EditBook />
                                 </ProtectedRoute>
                             }
                         />
@@ -80,6 +81,7 @@ function App() {
                             }
                         />
                     </Route>
+                    <Route path='*' element={<NotFound />} />
                 </Route>
             </Routes>
         </>

@@ -11,7 +11,7 @@ const Login = () => {
         const token = localStorage.getItem('token');
         if (token) {
             // already logged in
-            navigate('/explore');
+            navigate('/books');
         }
     }, []);
 
@@ -32,7 +32,7 @@ const Login = () => {
             if (data.token) {
                 localStorage.setItem('token', data.token)
                 localStorage.setItem('user_id', Number(data.user_id))
-                navigate('/explore');
+                navigate('/books');
             }
         })
         .catch(err => console.log(err));
