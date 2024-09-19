@@ -6,7 +6,6 @@ const Navbar = () => {
     const [dropdownVisible, setDropdownVisible] = useState(false);
     const dropdownRef = useRef(null);
 
-    // Toggle dropdown visibility
     const toggleDropdown = () => {
         setDropdownVisible(!dropdownVisible);
     };
@@ -43,7 +42,6 @@ const Navbar = () => {
 
                     </div>
                     
-                    {/* Dropdown menu */}
                     {dropdownVisible && (
                         <div
                             ref={dropdownRef}

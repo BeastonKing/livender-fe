@@ -6,7 +6,7 @@ const Card = ({ book }) => {
         <Link to={`/books/${book.ID}`}>
             <div className='flex flex-col bg-white rounded-lg shadow-lg w-60 text-left hover:scale-105 transition-all'>
                 <img
-                    src={book.Image} // Assuming book.Image is the URL of the book cover
+                    src={book.Image}
                     alt={book.Title}
                     className='w-full h-64 object-cover rounded-t-lg'
                 />

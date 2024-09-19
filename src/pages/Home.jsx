@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <main>
         <Navbar />
-        {/* the rest of the content here */}
         <Outlet />
     </main>
   )

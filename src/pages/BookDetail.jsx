@@ -168,7 +168,6 @@ const BookDetail = () => {
                                 <span className='font-semibold'>
                                     Posted on:{' '}
                                 </span>
-                                {/* {new Date(book.CreatedAt).toLocaleString('id-ID')} */}
                                 {new Date(book.CreatedAt)
                                     .toLocaleString('en-GB', {
                                         day: '2-digit',
